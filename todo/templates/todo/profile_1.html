@@ -1,0 +1,57 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<html>
+<head>
+    <style>
+        table, th, td {
+  border: 2px solid black;
+}
+    </style>
+</head>
+<body>
+<br>
+{% if user.is_authenticated %}
+<center>
+    <br>
+<table style="width:85%">
+    <tr>
+        <th><h3>{% block title %} Profile {% endblock %}</h3></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><b>Username:</b></td>
+        <td> {{ user.username }}</td>
+
+    </tr>
+    <tr>
+        <td><b>First Name:</b></td>
+        <td> {{ user.first_name }}</td>
+    </tr>
+    <tr>
+        <td><b>Last Name:</b></td>
+        <td> {{ user.last_name }}</td>
+    </tr>
+    <tr>
+        <td><b>Email-id:</b></td>
+        <td> {{ user.email }}</td>
+    </tr>
+    <tr>
+        <td><b>Password:</b></td>
+        <td> {{ user.password }}</td>
+    </tr>
+<!--<p>Username: {{ user.username }}</p>-->
+<!--<p>First Name: {{ user.first_name }}</p>-->
+<!--<p>Last Name: {{ user.last_name }}</p>-->
+<!--<p>Email-id: {{ user.email }}</p>-->
+<!--&lt;!&ndash;<p>Contact Number: {{ user.phone }}</p>&ndash;&gt;-->
+<!--<p>Password: {{ user.password }}</p>-->
+</center>
+</table>
+{% else %}
+
+<p>Login to view details</p>
+</body>
+</html>
+{% endif %}
+{% endblock %}
